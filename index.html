@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="nav">
+        <img src="nothing-logo-white-removebg-preview.png" alt="">
+        <div id="menu">
+            <h3>NOTHING</h3>
+            
+        </div>
+        <div id="header_buttons">
+            <button>GET STARTED</button>
+        </div>
+           
+    </div>
+    <div id="cursor"></div>
+    <div id="blur"></div>
+    <img id="main-img" src="data:image/jpeg;base64,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" alt="">
+    <!-- <video src="https://sidcupfamilygolf.com/wp-content/uploads/2023/08/SFG-Website-Header-Video-0823.mp4" autoplay loop muted></video> -->
+    <div id="main">
+        <div id="page1">
+            <h1>LEARN.CONNECT.INNOVATE</h1>
+            <h2>WELCOME TO THE NOTHING APP</h2>
+            <p>Connect with your classmates, exchange notes, and engage in scholarly banter without the hassle of multiple messaging apps.</p>
+        </div>
+        <div id="page2">
+            <div id="scroller">
+                <div class="scroller-in">
+                    <h4>LEARN</h4>
+                    <h4>CONNECT</h4>
+                    <h4>INNOVATE</h4>
+                    
+                </div>
+                <div class="scroller-in">
+                    <h4>LEARN</h4>
+                    <h4>CONNECT</h4>
+                    <h4>INNOVATE</h4>
+                    
+                </div>
+            </div>
+            <div id="about-us">
+                <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1.jpg?strip=all&lossy=1&sharp=1&w=384&ssl=1" alt="">
+                <div id="content">
+                    <h3>ABOUT NOTHING</h3>
+                    <p>where the absence of complications meets the presence of everything. Because who needs a variety of platforms when you can have NOTHING? Join the revolution; because in this space, NOTHING means everything you need for academic success. Don't just do something, do NOTHING!"</p>
+                </div>
+                <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2.jpg?strip=all&lossy=1&sharp=1&w=384&ssl=1" alt="">
+            </div>
+        </div>
+        <div id="page3">
+            <div id="cards-container">
+                <div class="card" id="card1">
+                    <img src="https://imgs.search.brave.com/ckfAPmfi7FdofD5ar7RNWojRTVBzTmqu31G5KIVoRBQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzA3LzI5LzI5/LzM2MF9GXzMwNzI5/Mjk1Ml9qT1lqelN2/ZjNpaFZ1cVMyWlpi/NHRtSjh5SkJ1QjNt/ay5qcGc" alt="">
+                    <div class="overlay">
+                        <h4>TEXT</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae neque repudiandae nostrum sed? Et cumque aliquid ullam odit quidem vero harum accusamus, deserunt non! Dicta est a ipsum. Repellat, </p>
+                    </div>
+                </div>
+                <div class="card" id="card2">
+                    <img src="https://imgs.search.brave.com/jMRHW7uLDlZKPJxhXGcuovZwRk-vo36LCSKXgr7a3L8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YWdvcmEuaW8vZW4v/d3AtY29udGVudC91/cGxvYWRzLzIwMjMv/MDYvY3VzdG9taXpl/ZC1saXZlLXZvaWNl/LWNoYXQtMTMwMHg4/MDYtMS53ZWJw" alt="">
+                    <div class="overlay">
+                        <h4>AUDIO</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum provident hic minus facere veritatis, fuga numquam nostrum voluptatum assumenda dolorum quos non modi nemo distinctio dicta! Quo, sunt repellendus!</p>
+                    </div>
+                </div>
+                <div class="card" id="card3">
+                    <img src="https://imgs.search.brave.com/H0bYTU71bU1yvtZP-VjMoE8Tewzl60EHc75IpFQV3uA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9yZW1vdGUtY29t/bXVuaWNhdGlvbi1i/bGFjay13b21hbi1t/YWtpbmctdmlkZW8t/Y2FsbC13aXRoLWJv/eWZyaWVuZC12aWEt/ZGlnaXRhbC10YWJs/ZXRfMTE2NTQ3LTI2/MTI2LmpwZz9zaXpl/PTYyNiZleHQ9anBn" alt="">
+                    <div class="overlay">
+                        <h4>VIDEO</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste sunt quas at quod soluta quasi. Earum deserunt cupiditate adipisci eligendi aperiam. Ratione vel architecto doloremque saepe sit dicta quas, sint officia. Repudiandae perspiciatis sint, corrupti quod omnis repellendus. Iste, autem.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="green-div">
+                <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt="">
+                <h3>SIGN UP NOW AND ENJOY A SEAMLESS, CONVENIENT, AND PRODUCTIVE LEARNING EXPERIENCE</h3>
+                <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt="">
+            </div>
+        </div>
+        <div id="page4">
+            <div id="colon-div">
+                <h1 id="top-colon">"</h1>
+                <!-- <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" id="top-colon" alt=""> -->
+                <h2>NOTHING: Because Who Needs Separate Apps for Everything? Welcome to the Ultimate Study Oasis, Where We've Merged Your Study Groups, Classroom, and Your Daily Chat Drama into... Well, NOTHING! Say goodbye to the joy of juggling multiple apps, and embrace the simplicity of having it all in one place – where doing NOTHING is actually doing everything.</h2>
+                <h1 id="bottom-colon">"</h1>
+                <!-- <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg" id="bottom-colon" alt=""> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
